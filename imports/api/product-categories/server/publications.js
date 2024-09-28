@@ -32,8 +32,4 @@ if(Meteor.isServer){
       return [];
     }
   });
-
-  Meteor.publish("get.product-categories.public", () => {
-    return ProductCategories.find({});
-  });
 }

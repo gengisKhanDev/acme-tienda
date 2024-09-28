@@ -7,22 +7,6 @@ const createdBy = require("../../startup/server/created-by.js");
 const colors = require("../../startup/server/colors.js");
 
 Meteor.methods({
-  "addImage.productCategory"(id, fileObj){
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-    check(fileObj, Object);
-
-    ProductCategories.update({_id: id},{
-      $set: {
-        image: fileObj
-      }
-    });
-
-    return ProductCategories.findOne({_id: id}).image;
-  },
   "add.product-category"(codPostal, ciudad, direccion,telefono){
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");

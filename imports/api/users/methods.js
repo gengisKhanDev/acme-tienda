@@ -119,19 +119,6 @@ Meteor.methods({
       }
     });
   },
-  "subscription.user"(id, checkedBool){
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-    check(id, String);
-    check(checkedBool, Boolean);
-
-    Users.update({_id: id},{
-      $set: {
-        "profile.subscribedToCampaigns": checkedBool
-      }
-    });
-  },
   "edit.user"(id, firstName, lastName, roleID){
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");
@@ -175,21 +162,6 @@ Meteor.methods({
       }
     }, {multi: true});
   },
-  "delete.user"(id){
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-
-    //find user in DB
-    const user = Users.findOne({_id: id});
-    if(user.profile.role === "Super Admin"){
-      throw new Meteor.Error("admin-user", "Can't delete this user!");
-    }
-
-    Users.remove({_id: id});
-  },
   "user.get"(id){
     console.log("Ran Method [user.get]");
 
@@ -200,101 +172,5 @@ Meteor.methods({
     check(id, String);
 
     return Users.findOne({_id: id});
-  },
-  "user.happyBirthday.seen"(){
-    console.log("Ran Method [user.happyBirthday.seen]");
-
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    Users.update({_id: Meteor.userId()},{
-      $set: {
-        "profile.hasShownHappyBirthday": true
-      }
-    });
-  },
-  "enter.user.code"(id, passcode){
-    console.log("Ran Method [enter.user.code]");
-
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-    check(passcode, String);
-
-    Users.update({"_id": id},{
-      $set: {
-        "profile.passcode": passcode
-      }
-    });
-  },
-  "check.user.code"(id, passcode){
-    console.log("Ran Method [check.user.code]");
-
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-    check(passcode, String);
-
-    const thisUser = Users.findOne({"_id": id});
-    if(thisUser.profile.passcode === passcode && thisUser.profile.passcode.length === passcode.length){
-      console.log("valid login");
-      return {
-        code: "valid login",
-        role: thisUser.profile.role.name
-      }
-    }
-    else if(thisUser != passcode && thisUser.profile.passcode.length === passcode.length){
-      console.log("invalid login");
-      return {
-        code: "invalid login",
-        role: thisUser.profile.role.name
-      }
-    }
-  },
-  "user.uploadAvatar"(id, avatarURL){
-    console.log("Ran Method [user.uploadAvatar]");
-
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-    check(avatarURL, String);
-
-    Users.update({_id: id},{
-      $set: {
-        avatar: {
-          type: "avatar",
-          id: Random.id(),
-          image: avatarURL
-        }
-      }
-    });
-  },
-  "user.uploadImage"(id, fileObject){
-    console.log("Ran Method [user.uploadImage]");
-
-    if(!Meteor.userId()){
-      throw new Meteor.Error("not-authorized");
-    }
-
-    check(id, String);
-    check(fileObject, Object);
-
-    Users.update({_id: id},{
-      $set: {
-        avatar: {
-          id: Random.id(),
-          name: fileObject.name,
-          type: fileObject.type,
-          base64: fileObject.base64
-        }
-      }
-    });
   }
 });

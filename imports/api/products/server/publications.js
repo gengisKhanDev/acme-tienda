@@ -35,18 +35,4 @@ if(Meteor.isServer){
       return [];
     }
   });
-
-  Meteor.publish("get.products.by.category.id", (id) => {
-    if(Meteor.userId()){
-      return Products.find({"category.id": id});
-    }
-    else {
-      return [];
-    }
-  });
-
-
-  Meteor.publish("get.products.public", () => {
-    return Products.find({});
-  });
 }

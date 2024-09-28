@@ -12,10 +12,6 @@ if(Meteor.isServer){
     }
   });
 
-  Meteor.publish("get.setting.public", (selector) => {
-    return Settings.find({_id: selector});
-  });
-
   Meteor.publish("settings.all.public", () => {
     return Settings.find({});
   });

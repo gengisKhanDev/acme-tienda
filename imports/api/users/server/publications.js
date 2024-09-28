@@ -22,17 +22,6 @@ if (Meteor.isServer) {
     }
   });
 
-  Meteor.publish("get.users.by.company", (id) => {
-    check(id, String);
-
-    if (Meteor.userId()) {
-      return Users.find({ "profile.company.id": id })
-    }
-    else {
-      return [];
-    }
-  });
-
   Meteor.publish("get.user", (id) => {
     if (Meteor.userId()) {
       return Users.find({ "_id": id })
