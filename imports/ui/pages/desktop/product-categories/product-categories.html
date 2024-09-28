@@ -1,0 +1,19 @@
+<template name="desktop_product_categories">
+  {{#unless isSubscriptionReady}}
+    {{> loader}}
+  {{/unless}}
+
+  <div class="container-fluid container-white">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center fw-bolder">Sedes:</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 table-responsive">
+        {{> reactiveTable settings=productCategories}}
+      </div>
+    </div>
+  </div>
+</template>

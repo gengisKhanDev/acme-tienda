@@ -1,0 +1,33 @@
+<template name="public_cookies_banner">
+  {{#if cookiesBanner}}
+    <div class="cookies-banner animate__animated animate__backInUp">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 text-center">
+          <h4>
+            <i class="fas fa-cookie-bite"></i> Cookies & Privacy
+          </h4>
+          <span>We use cookies to enhance your experience, make site improvements
+            and to remember your settings. We also use cookies set by other sites
+            to help deliver content from their services.</span>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="row mt-4">
+            <div class="col-4">
+              <button type="button" class="btn btn-primary" id="manageCookies">
+                MANAGE
+              </button>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-success accept">ACCEPT ALL</button>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-danger accept">REJECT ALL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+  {{> public_manages_cookies_modal}}
+</template>

@@ -1,0 +1,10 @@
+<template name="public_body">
+  <div class="public-body">
+    {{> Template.dynamic template=navbar}}
+    {{> Template.dynamic template=main}}
+    {{> Template.dynamic template=footer}}
+
+    {{> public_cookies_banner}}
+    {{> offline_alert}}
+  </div>
+</template>

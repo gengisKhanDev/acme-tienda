@@ -1,0 +1,12 @@
+<template name="user_body">
+  <div class="user-body">
+    {{> offline_alert}}
+
+    {{> happy_birthday}}
+
+    {{> Template.dynamic template=sidebar}}
+    <div class="main">
+      {{> Template.dynamic template=main}}
+    </div>
+  </div>
+</template>

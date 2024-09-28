@@ -1,0 +1,345 @@
+.desktop-body {
+  .edit-patient {
+    .archived {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("/archived.png");
+      position: absolute;
+      top: 16%;
+      left: 0%;
+      z-index: 9999;
+      height: 80px;
+      width: 100%;
+    }
+
+    .header {
+      color: $color-1-black;
+      .info {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        .name {
+          font-weight: 700;
+        }
+        .ssn {
+          cursor: pointer;
+        }
+      }
+      .current-run {
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: $color-3-grey;
+        padding: 0px;
+        .button {
+          border: none;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          color: $color-1-black;
+          width: 100%;
+          height: 99%;
+          padding-top: 28px;
+          .title {
+            font-weight: 700;
+          }
+          &:hover {
+            background-color: $color-1-blue;
+            color: $color-1-white;
+          }
+        }
+      }
+    }
+
+    .no-address {
+      background-color: $color-3-grey;
+      height: 140px;
+      width: 100%;
+      .text {
+        text-align: center;
+        vertical-align: middle;
+        line-height: 140px;
+      }
+    }
+
+    .pcs-form, .dnr-form {
+      .delete-pcs {
+        font-size: 20px;
+        position: absolute;
+        color: $color-1-red;
+        border-radius: 50%;
+        right: 2%;
+        top: 2%;
+        background-color: #FFFFFF;
+        z-index: 999;
+        &:hover {
+          cursor: pointer;
+          font-size: 22px;
+          transition: 0.4s;
+          transform: scale(1.1);
+          color: $color-2-red;
+        }
+      }
+      .active, .past {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .guardians {
+      height: 250px;
+      overflow-y: scroll;
+      .guardian {
+        position: relative;
+        background-color: $color-1-white;
+        color: $color-2-black;
+        min-height: 100px;
+        height: fit-content;
+        width: 99%;
+        margin-top: 20px;
+        padding: 10px;
+        @include boxShadow;
+        border-style: solid;
+        border-color: $color-1-grey;
+        border-width: 1px;
+        border-radius: 5px;
+        text-align: left;
+        @include popIn;
+        .name {
+          position: absolute;
+          left: 2%;
+          top: 10%;
+          font-weight: 700;
+        }
+        .relation {
+          position: absolute;
+          left: 2%;
+          top: 32%;
+          font-weight: 100;
+        }
+        .phone {
+          position: absolute;
+          left: 40%;
+          top: 10%;
+          font-weight: 700;
+          .link {
+            color: $color-2-black;
+          }
+        }
+        .phone-text {
+          position: absolute;
+          left: 40%;
+          top: 32%;
+          bottom: 32%;
+        }
+        .line {
+          border-top-color: $color-1-grey;
+          border-top-style: solid;
+          border-top-width: 1px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 72%;
+          .delete-guardian {
+            position: relative;
+            left: 1%;
+            bottom: 4%;
+            border: none;
+            background-color: inherit;
+            color: $color-1-blue;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            &:hover {
+              color: $color-2-blue;
+            }
+          }
+        }
+      }
+    }
+
+    // .histories {
+    //   height: 600px;
+    //   overflow-y: scroll;
+    //   .history {
+    //     position: relative;
+    //     background-color: #FFFFFF;
+    //     color: $color-2-black;
+    //     min-height: 180px;
+    //     height: fit-content;
+    //     width: 99%;
+    //     margin-top: 20px;
+    //     padding: 10px;
+    //     box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+    //     -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    //     -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    //     border-style: solid;
+    //     border-color: $color-1-grey;
+    //     border-width: 1px;
+    //     border-radius: 5px;
+    //     text-align: left;
+    //     @include popIn;
+    //     .code {
+    //       position: absolute;
+    //       left: 2%;
+    //       top: 10%;
+    //       font-weight: 700;
+    //       font-size: 18px;
+    //     }
+    //     .description {
+    //       position: absolute;
+    //       left: 2%;
+    //       top: 28%;
+    //     }
+    //     .line {
+    //       border-top-color: $color-1-grey;
+    //       border-top-style: solid;
+    //       border-top-width: 1px;
+    //       position: absolute;
+    //       width: 100%;
+    //       height: 1px;
+    //       left: 0;
+    //       top: 72%;
+    //       .delete-history {
+    //         position: relative;
+    //         left: 1%;
+    //         bottom: 4%;
+    //         border: none;
+    //         background-color: inherit;
+    //         color: $color-1-yellow;
+    //         font-size: 16px;
+    //         cursor: pointer;
+    //         display: inline-block;
+    //         &:hover {
+    //           color: $color-2-yellow;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    .physicians {
+      .physician {
+        position: relative;
+        background-color: $color-1-white;
+        color: $color-2-black;
+        min-height: 180px;
+        height: fit-content;
+        width: 99%;
+        margin-top: 20px;
+        padding: 10px;
+        @include boxShadow;
+        border-radius: 5px;
+        padding: 0px;
+        @include popIn;
+        & form {
+          padding: 10px;
+        }
+        &.primary {
+          position: inherit;
+          border-style: solid;
+          border-color: $color-1-blue;
+          border-width: 1px;
+          border-top-width: 60px;
+          .title {
+            color: $color-1-white;
+            position: relative;
+            top: -40px;
+            left: 15px;
+          }
+        }
+        .code {
+          position: absolute;
+          left: 2%;
+          top: 10%;
+          font-weight: 700;
+          font-size: 18px;
+        }
+        .line {
+          padding: 0px !important;
+          border-top-color: $color-1-blue;
+          border-top-style: solid;
+          border-top-width: 1px;
+          .delete-physician, .edit-physician, .make-pcp {
+            padding: 10px;
+            border: none;
+            background-color: inherit;
+            color: $color-1-blue;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            &:hover {
+              color: $color-2-blue;
+            }
+          }
+        }
+      }
+    }
+
+    // .allergies {
+    //   height: 600px;
+    //   overflow-y: scroll;
+    //   .allergy {
+    //     position: relative;
+    //     background-color: #FFFFFF;
+    //     color: $color-2-black;
+    //     min-height: 180px;
+    //     height: fit-content;
+    //     width: 99%;
+    //     margin-top: 20px;
+    //     padding: 10px;
+    //     box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+    //     -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    //     -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    //     border-style: solid;
+    //     border-color: $color-1-grey;
+    //     border-width: 1px;
+    //     border-radius: 5px;
+    //     text-align: left;
+    //     @include popIn;
+    //     .name {
+    //       position: absolute;
+    //       left: 2%;
+    //       top: 10%;
+    //       font-weight: 700;
+    //     }
+    //     .note {
+    //       position: absolute;
+    //       left: 2%;
+    //       top: 32%;
+    //       font-weight: 100;
+    //     }
+    //     .line {
+    //       border-top-color: $color-1-grey;
+    //       border-top-style: solid;
+    //       border-top-width: 1px;
+    //       position: absolute;
+    //       width: 100%;
+    //       height: 1px;
+    //       left: 0;
+    //       top: 72%;
+    //       .delete-allergy {
+    //         position: relative;
+    //         left: 1%;
+    //         bottom: 4%;
+    //         border: none;
+    //         background-color: inherit;
+    //         color: $color-1-yellow;
+    //         font-size: 16px;
+    //         cursor: pointer;
+    //         display: inline-block;
+    //         &:hover {
+    //           color: $color-2-yellow;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    .icd10-list {
+      height: 250px;
+      overflow-y: scroll;
+    }
+  }
+}

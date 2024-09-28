@@ -1,0 +1,25 @@
+.desktop-body {
+  .claim-md-modal {
+    .my-2 {
+      border-color: black;
+      border-style: solid;
+      border-width: 1px;
+    }
+    .modal-dialog {
+      max-width: 96% !important
+    }
+    input {
+      &:read-only {
+        color: $color-1-black;
+        background-color: $color-1-grey;
+      }
+    }
+    input {
+      &:focus {
+        color: $color-1-black;
+        background-color: $color-1-grey !important;
+        border-color: $color-1-black !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.public-body {
+  .games {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+    .title {
+      font-weight: 400;
+      text-align: center;
+    }
+    .background{
+      padding-bottom: 10px;
+      background: linear-gradient(90deg, #4D5BF0 0%, #10158B 100%);
+    }
+    .game {
+      width: 80%;
+      height: 80%;
+      margin: auto;
+      padding: 20px;
+      display: block;
+      @include popIn;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: 100%;
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        margin-top: 40px;
+        width: 80%;
+      }
+      &:hover {
+        background: linear-gradient(90deg, #4D5BF0 0%, #10158B 100%);
+        .title {
+          display: block;
+        }
+        .btn {
+          margin: auto;
+          display: block;
+          position: relative;
+          top: -20%;
+        }
+      }
+      .image {
+        width: 100%;
+        height: auto;
+      }
+      .title, .btn {
+        display: none;
+      }
+    }
+  }
+}

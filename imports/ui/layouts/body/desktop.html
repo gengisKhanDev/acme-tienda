@@ -1,0 +1,10 @@
+<template name="desktop_body">
+  <div class="desktop-body">
+    {{> offline_alert}}
+
+    {{> Template.dynamic template=navbar}}
+
+    {{> Template.dynamic template=sidebar}}
+    {{> Template.dynamic template=main}}
+  </div>
+</template>

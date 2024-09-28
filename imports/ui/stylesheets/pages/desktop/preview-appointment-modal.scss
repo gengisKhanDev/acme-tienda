@@ -1,0 +1,18 @@
+.desktop-body {
+  .preview-appointment-modal {
+    .modal-dialog {
+      max-width: 44% !important;
+    }
+    .modal-body {
+      max-height: 260px !important;
+    }
+    .fa-thumbtack {
+      font-size: 32px;
+      position: absolute;
+      left: 50%;
+      top: -12px;
+      transform: rotateY(0deg) rotate(45deg);
+      color: $color-1-red;
+    }
+  }
+}

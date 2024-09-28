@@ -1,0 +1,55 @@
+<template name="public_navbar">
+  <nav class="navbar navbar-expand-sm animate__animated animate__fadeIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/logos/white.png" alt="Logo" class="logo"
+          width="100" height="auto">
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto mx-2">
+          <li class="nav-item">
+            <a href="/" class="{{isActiveRoute 'public.home'}} link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about-us" class="{{isActiveRoute 'public.about-us'}} link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/games" class="{{isActiveRoute 'public.games'}} link">Games</a>
+          </li>
+          <li class="nav-item">
+            <a href="/events" class="{{isActiveRoute 'public.events'}} link">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/refueling-station" class="{{isActiveRoute 'public.refueling-station'}} link">Refueling Station</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="/reviews" class="{{isActiveRoute 'public.reviews'}}">Reviews</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="/contact-us" class="{{isActiveRoute 'public.contact-us'}} link">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            {{#if userLoggedIn}}
+              <button type="button" class="btn btn-outline-primary mx-2" id="myAccount">
+                My Account
+              </button>
+              <button type="button" class="btn btn-outline-danger" id="logout">Logout</button>
+            {{else}}
+              <a href="/login" class="btn btn-outline-primary">
+                <i class="far fa-user-circle"></i> LOGIN
+              </a>
+              <a href="/sign-up" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> SIGN UP
+              </a>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>

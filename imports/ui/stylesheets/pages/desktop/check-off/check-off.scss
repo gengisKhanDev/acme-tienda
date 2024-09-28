@@ -1,0 +1,26 @@
+.diagram {
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &.left {
+    background-image: url("/ambulance/left.png");
+  }
+  &.right {
+    background-image: url("/ambulance/right.png");
+  }
+  &.front {
+    background-image: url("/ambulance/front.png");
+  }
+  &.back {
+    background-image: url("/ambulance/back.png");
+  }
+}
+
+.check-off {
+  .replenish-info {
+    display: block;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,34 @@
+.dataTables_wrapper {
+  .dataTables_processing {
+    text-align: center;
+    font-size: 24px;
+    padding: 12px;
+    color: $color-1-white;
+    background-color: $color-1-blue;
+  }
+  .dataTables_filter {
+    input {
+      border-color: $color-1-grey;
+      border-width: 1px;
+    }
+  }
+  .dataTable {
+    .dataTables_empty {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+  .paging_simple_numbers {
+    &.previous {
+      margin-left: 0px !important;
+    }
+    .paginate_button {
+      margin-left: 4px;
+      margin-right: 4px;
+      &.current {
+        font-weight: 900;
+        color: $color-1-black;
+      }
+    }
+  }
+}

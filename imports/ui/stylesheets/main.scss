@@ -1,0 +1,186 @@
+/*Main CSS File*/
+/*Variables*/
+@import "./variables.scss";
+
+//Font
+@import "./fonts.scss";
+
+/*Mixins*/
+@import "./mixins/fade-in.scss";
+@import "./mixins/breathing.scss";
+@import "./mixins/pop-in.scss";
+@import "./mixins/swipe-left.scss";
+@import "./mixins/box-shadow.scss";
+@import "./mixins/scale-up.scss";
+@import "./mixins/blink.scss";
+
+/*Layout*/
+//Desktop
+@import "./layouts/desktop.scss";
+//User
+//@import "./layouts/user.scss";
+//Public
+//@import "./layouts/public.scss";
+//Global
+@import "./layouts/global.scss";
+
+/*Pages*/
+//Global
+@import "./pages/global/login.scss";
+@import "./pages/global/sign-up.scss";
+@import "./pages/global/not-found.scss";
+@import "./pages/global/not-authorized.scss";
+@import "./pages/global/forgot-password.scss";
+@import "./pages/global/sign-in.scss";
+@import "./pages/global/apply.scss";
+//Desktop
+
+@import "./pages/desktop/system-settings/system-settings.scss";
+
+@import "./pages/desktop/payers.scss";
+@import "./pages/desktop/clients/edit.scss";
+@import "./pages/desktop/invoices/edit.scss";
+@import "./pages/desktop/mas-sedes.scss";
+
+
+//User
+@import "./pages/user/my-account/my-account.scss";
+@import "./pages/user/reservations/new.scss";
+@import "./pages/user/reservations/view.scss";
+@import "./pages/user/reservations/reservations.scss";
+
+//Public
+// @import "./pages/public/home.scss";
+// @import "./pages/public/games.scss";
+// @import "./pages/public/game.scss";
+// @import "./pages/public/oculus.scss";
+// @import "./pages/public/pod-rental.scss";
+// @import "./pages/public/birthdays.scss";
+// @import "./pages/public/refueling-station.scss";
+// @import "./pages/public/contact-us.scss";
+// @import "./pages/public/about-us.scss";
+// @import "./pages/public/event.scss";
+
+//Shared
+@import "./pages/shared/gift-cards/buy.scss";
+@import "./pages/shared/gift-cards/check-balance.scss";
+
+/*Components*/
+//Global
+@import "./components/global/offline-alert.scss";
+@import "./components/global/drop-zone.scss";
+@import "./components/global/flat-picker.scss";
+@import "./components/global/scroll-bar.scss";
+@import "./components/global/select-2.scss";
+@import "./components/global/toggle.scss";
+@import "./components/global/checkbox.scss";
+@import "./components/global/radio.scss";
+@import "./components/global/reactive-table.scss";
+@import "./components/global/signature-canvas.scss";
+@import "./components/global/selection.scss";
+@import "./components/global/modal.scss";
+@import "./components/global/quilljs.scss";
+@import "./components/global/tabular-table.scss";
+@import "./components/global/tooltip.scss";
+@import "./components/global/colors.scss";
+
+@import "./components/global/inputs.scss";
+@import "./components/global/text.scss";
+@import "./components/global/buttons.scss";
+@import "./components/global/badges.scss";
+@import "./components/global/alerts.scss";
+@import "./components/global/pop-over.scss";
+@import "./components/global/card.scss";
+@import "./components/global/waiver.scss";
+@import "./components/global/fullcalendar.scss";
+@import "./components/global/introjs.scss";
+@import "./components/global/page-hero.scss";
+
+@import "./components/global/yolo-alert.scss";
+@import "./components/global/sour-alert.scss";
+@import "./components/global/loader.scss";
+// @import "./components/global/enroll.scss";
+// @import "./components/global/reset-password.scss";
+
+//Desktop
+@import "./components/desktop/navbar.scss";
+@import "./components/desktop/sidebar.scss";
+@import "./components/desktop/game-edit.scss";//modificar el input
+
+
+//User
+//@import "./components/user/sidebar.scss";
+// @import "./components/user/happy-birthday.scss";
+//Public
+@import "./components/public/navbar.scss";
+@import "./components/public/footer.scss";
+@import "./components/public/inputs.scss";
+// @import "./components/public/modal.scss";
+// @import "./components/public/reserve-game-modal.scss";
+// @import "./components/public/games.scss";
+// @import "./components/public/events.scss";
+@import "./components/public/page-title.scss";
+@import "./components/public/cookies-banner.scss";
+
+//user
+@import "./components/user/avatar-modal.scss";
+
+:root {
+  --input-padding-x: .75rem;
+  --input-padding-y: .75rem;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+html,
+body {
+  font-family: "brinnanregular";
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100%;
+  overscroll-behavior-y: contain !important;
+
+  /*Smooth Scroll (Phones)*/
+  -webkit-overflow-scrolling: touch;
+
+  caret-color: $color-1-purple;
+}
+
+.no-js {
+  color: $color-1-red;
+  text-align: center;
+  position: absolute;;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.map-wrapper {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  .map {
+    width: 100%;
+    height: 200px;
+    border: none;
+    @media (min-width: 320px) and (max-width: 480px) {
+      height: 200px !important;
+    }
+  }
+}
+
+.container-white {
+  background-color: $color-1-white;
+  width: 98%;
+  height: auto;
+  margin-top: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $color-1-purple;
+  border-radius: 10px;
+  padding: 20px;
+}

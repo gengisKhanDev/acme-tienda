@@ -1,0 +1,131 @@
+/*Override Bootstrap Buttons*/
+.public-body, .global-body {
+  .btn {
+    border-radius: 64px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    @media (min-width: 320px) and (max-width: 480px) {
+      padding: 10px;
+    }
+  }
+}
+
+.btn-primary {
+  @include button-variant($color-1-purple, darken($color-1-purple, 7.5%), darken($color-1-purple, 10%), lighten($color-1-purple, 5%), lighten($color-1-purple, 10%), darken($color-1-purple, 30%));
+  color: $color-1-white !important;
+  border-color: $color-1-purple;
+  &:hover {
+    border-color: darken($color-2-purple, 10%);
+  }
+}
+
+.btn-outline-primary {
+  @include button-variant($color-1-purple, darken($color-1-purple, 7.5%), darken($color-1-purple, 10%), lighten($color-1-purple, 5%), lighten($color-1-purple, 10%), darken($color-1-purple, 30%));
+  color: $color-1-white !important;
+  background-color: $color-1-black;
+  border-color: $color-1-purple;
+  &:hover {
+    border-color: darken($color-2-purple, 10%);
+  }
+}
+
+.btn-group.btn-group-block {
+  display: flex;
+}
+
+.btn-group-block .btn {
+  flex: 1
+}
+
+.dropdown-menu {
+  border-radius: 0px !important;
+  .dropdown-item {
+    &:hover {
+      color: $color-1-white;
+      background-color: $color-1-blue;
+    }
+    &:focus {
+      background-color: $color-1-blue;
+    }
+  }
+}
+
+.button-effect{
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #DC2424;
+  margin: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #ffff;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.button-effect:hover{
+  transition-delay: 1.5s;
+  color: #000;
+  box-shadow: 0 0 10px #DC2424,
+              0 0 20px #DC2424,
+              0 0 40px #DC2424,
+              0 0 80px #DC2424,
+              0 0 160px #DC2424;
+}
+.button-effect span{
+  position: relative;
+  z-index: 100;
+}
+.button-effect:nth-child(2){
+  filter: hue-rotate(88deg);
+}
+.button-effect::before{
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #DC2424;
+  box-shadow: 5px -8px 0 #DC2424,
+              5px -8px 0 #DC2424;
+  transition: width 0.5s, left 0.5s, height 0.5s,
+  box-shadow;
+  transition-delay: 1s,0.5s,0s,0s;
+}
+.button-effect:hover::before{
+  width: 60%;
+  height: 100%;
+  left: -2px;
+  box-shadow: 5px 0px 0 #DC2424,
+              5px 0px 0 #DC2424;
+  transition-delay: 0s,0.5s,1s,1s;
+}
+.button-effect::after{
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #DC2424;
+  box-shadow: -5px -8px 0 #DC2424,
+              -5px -8px 0 #DC2424;
+  transition: width 0.5s, left 0.5s, height 0.5s,
+  box-shadow;
+  transition-delay: 1s,0.5s,0s,0s;
+}
+.button-effect:hover::after{
+  width: 60%;
+  height: 100%;
+  right: -2px;
+  box-shadow: -5px 0px 0 #DC2424,
+              -5px 0px 0 #DC2424;
+  transition-delay: 0s,0.5s,1s,1s;
+}

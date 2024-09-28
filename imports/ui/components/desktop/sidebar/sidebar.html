@@ -1,0 +1,112 @@
+<template name="desktop_sidebar">
+  <div class="sidebar close">
+    <!-- <div class="row logo-details">
+      <div class="col-3 mt-3">
+        <img src="/logos/white.png" alt="Logo" class="image">
+      </div>
+      <div class="col-7 p-0 mt-4">
+        <span class="name">Galaxy VR</span>
+      </div>
+      <div class="col-2">
+        <i class="icon fas fa-bars btn" id="collapse"></i>
+      </div>
+    </div> -->
+    <ul class="nav-links">
+
+      <li class="list">
+        <div class="row">
+          <div class="col-8">
+            <a class="anchor" href="#">
+              <i class="icon fas fa-tshirt"></i>
+              <span class="link-name">Existencias</span>
+            </a>
+          </div>
+          <div class="col-4">
+            <i class="icon fas fa-angle-down arrow"></i>
+          </div>
+        </div>
+        <ul class="sub-menu">
+          <li class="list">
+            <a class="link-name anchor" href="#">Existencias</a>
+          </li>
+          <li class="list">
+            <a href="/admin/products" class="{{isActiveRoute 'user.reserved-games'}} anchor">Consultar Existencia
+            </a>
+          </li>
+          <li class="list">
+            <a href="/admin/products/add" class="{{isActiveRoute 'user.reserve-new-games'}} anchor">Añadir Prenda</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="list">
+        <div class="row">
+          <div class="col-8">
+            <a class="anchor" href="#">
+              <i class="icon fas fa-home"></i>
+              <span class="link-name">Sedes</span>
+            </a>
+          </div>
+          <div class="col-4">
+            <i class="icon fas fa-angle-down arrow"></i>
+          </div>
+        </div>
+        <ul class="sub-menu">
+          <li class="list">
+            <a class="link-name anchor" href="#">Sedes</a>
+          </li>
+          <li class="list">
+            <a href="/admin/product-categories" class="{{isActiveRoute 'user.gift-card-check-balance'}} anchor">Lista de Sedes:</a>
+          </li>
+          <li class="list">
+            <a href="/admin/product-categories/add" class="{{isActiveRoute 'user.gift-card-buy'}} anchor">Añadir Sedes</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="list">
+        <div class="row">
+          <div class="col-8">
+            <a class="anchor" href="#">
+              <i class="icon fas fa-box-open"></i>
+              <span class="link-name">Proveedores</span>
+            </a>
+          </div>
+          <div class="col-4">
+            <i class="icon fas fa-angle-down arrow"></i>
+          </div>
+        </div>
+        <ul class="sub-menu">
+          <li class="list">
+            <a class="link-name anchor" href="#">Proveedores</a>
+          </li>
+          <li class="list">
+            <a href="#" class="{{isActiveRoute 'user.gift-card-check-balance'}} anchor">Lista de Proveedores</a>
+          </li>
+          <li class="list">
+            <a href="#" class="{{isActiveRoute 'user.gift-card-buy'}} anchor">Buy</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="list">
+        <a href="/admin/usuarios" class="{{isActiveRoute 'user.my-account'}} anchor">
+          <i class="icon fas fa-user"></i>
+          <span class="link-name">Usuarios</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li class="list">
+            <a class="link-name {{isActiveRoute 'user.my-account'}} anchor" href="/admin/usuarios">Usuarios</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="list logout">
+        <a class="anchor" id="logout">
+          <i class="icon fas fa-sign-out-alt"></i>
+          <span class="link-name">Lista de Usuarios</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>

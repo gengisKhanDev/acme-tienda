@@ -1,0 +1,20 @@
+.user-body {
+  .avatar-modal {
+    .avatar {
+      border-radius: 100px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: $color-1-black;
+      height: 120px;
+      width: 120px;
+      &:hover {
+        filter: grayscale(100%);
+        transform: scale(1.05);
+      }
+      @media (min-width: 100px) and (max-width: 400px) {
+        height: 90px;
+        width: 90px;
+      }
+    }
+  }
+}

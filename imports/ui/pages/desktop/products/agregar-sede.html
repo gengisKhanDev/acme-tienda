@@ -1,0 +1,55 @@
+<template name="desktop_agregar_sede">
+  <!-- {{#if Template.subscriptionsReady}} -->
+    <div class="container-fluid container-white">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center fw-bolder">Añadir a la prenda sede y cantidad</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <form id="agregarSede">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="number" class="form-control input" id="cantidad" autofocus required>
+                  <label>Cantidad</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="talla" autofocus required>
+                  <label>Talla</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 pt-3">
+                <div class="styled-input">
+                  <select class="form-control select2" id="ciudad" required>
+                    <option></option>
+                    {{#each productCategory in productCategories}}
+                      <option value="{{productCategory._id}}">{{productCategory.ciudad}}</option>
+                    {{/each}}
+                  </select>
+                  <label>Seleccione la Sede</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 text-center">
+                <div class="mt-4">
+                  <button type="submit" class="btn" style="border-radius: 5px !important;
+                  background-color: #425f8b;
+                  color: #ffff;
+                  width: 200px;">
+                    Terminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- {{else}}
+    {{> loader}}
+  {{/if}} -->
+</template>

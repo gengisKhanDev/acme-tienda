@@ -1,0 +1,35 @@
+/*Loader*/
+.loader {
+  width: 24%;
+  height: 200px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  z-index: 99999;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/loader.gif");
+  background-color: linear-gradient(90deg, #4D5BF0 0%, #10158B 100%);
+  border-radius: 10px;
+  .title {
+    color: $color-1-white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  //##Device = Tablets, Ipads (portrait)
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 30%;
+  }
+  //##Device = Most of the Smartphones Mobiles (Portrait)
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 68%;
+  }
+}

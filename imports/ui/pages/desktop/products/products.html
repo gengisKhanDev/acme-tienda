@@ -1,0 +1,18 @@
+<template name="desktop_products">
+  {{#unless isSubscriptionReady}}
+  {{> loader}}
+  {{/unless}}
+  <div class="container-fluid container-white">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center fw-bolder">Consultar Existencia:</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 table-responsive">
+        {{> reactiveTable settings=products}}
+      </div>
+    </div>
+  </div>
+</template>

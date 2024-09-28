@@ -1,0 +1,26 @@
+.desktop-body {
+  .calendar {
+    .btn-ldt {
+      color: $color-1-white;
+      background-color: $color-1-purple;
+      &:hover {
+        background-color: $color-2-purple;
+      }
+    }
+    .btn-other {
+      color: $color-1-white;
+      background-color: $color-1-green;
+      &:hover {
+        background-color: $color-2-green;
+      }
+    }
+
+    .fc-day-today {
+      .fc-scrollgrid-sync-inner {
+        .fc-col-header-cell-cushion  {
+          color: white !important;
+        }
+      }
+    }
+  }
+}

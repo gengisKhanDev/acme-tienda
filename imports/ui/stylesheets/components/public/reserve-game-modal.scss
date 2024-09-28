@@ -1,0 +1,208 @@
+.public-body {
+  .reserve-game-modal {
+    .modal-dialog {
+      margin: 20px;
+      padding: 20px;
+      max-width: 100%;
+    }
+    .modal-content {
+      width: 100%;
+    }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      background-color: $color-1-black;
+      border-style: solid;
+      border-width: 2px;
+      border-color: $color-1-purple;
+      .btn-close {
+        background-color: $color-1-purple;
+      }
+    }
+    .modal-footer {
+      border-top-width: 1px;
+      border-top-color: $color-1-purple !important;
+    }
+
+    .max-height {
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    .selected {
+      border-style: solid;
+      border-width: 2px;
+      border-color: $color-1-purple;
+      transition: 0.4s;
+      transform: scale(1.1);
+    }
+
+    .signature {
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    .credit-debit-card {
+      .front {
+        margin: auto;
+        position: relative;
+        width: 338px;
+        height: 212px;
+        background-image: url("/debit-card/background.jpg");
+        background-size: cover;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+        @media (min-width: 320px) and (max-width: 480px) {
+          width: 255px;
+          height: 160px;
+        }
+      }
+      &.active {
+        transform: rotateY(180deg);
+      }
+      .front {
+        .chip {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 40px;
+          height: auto;
+        }
+        .card-brand {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          width: 80px;
+          height: auto;
+        }
+        .number-group {
+          position: absolute;
+          top: 72px;
+          left: 20px;
+          .text {
+            display: block;
+            font-size: 16px;
+            color: $color-2-grey;
+          }
+          .numbers {
+            display: block;
+            color: $color-1-white;
+            font-size: 22px;
+            text-transform: uppercase;
+          }
+        }
+        .name-group {
+          position: absolute;
+          top: 140px;
+          left: 20px;
+          .text {
+            display: block;
+            font-size: 16px;
+            color: $color-2-grey;
+          }
+          .name {
+            display: block;
+            color: $color-1-white;
+            font-size: 22px;
+            text-transform: uppercase;
+          }
+        }
+        .expiration-group {
+          position: absolute;
+          top: 122px;
+          right: 20px;
+          .text {
+            display: block;
+            font-size: 16px;
+            color: $color-2-grey;
+          }
+          .name {
+            display: block;
+            color: $color-1-white;
+            font-size: 22px;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .back {
+        margin: auto;
+        position: relative;
+        width: 338px;
+        height: 212px;
+        background-image: url("/debit-card/background.jpg");
+        background-size: cover;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+        @media (min-width: 320px) and (max-width: 480px) {
+          width: 255px;
+          height: 160px;
+        }
+        .magnetic-strip {
+          height: 40px;
+          background: $color-1-black;
+          width: 100%;
+          position: absolute;
+          top: 30px;
+          left: 0;
+        }
+        .data {
+          margin-top: 60px;
+          .paragraph {
+            margin-bottom: 5px;
+          }
+          .signature-container {
+            width: 70%;
+          }
+          .signature {
+            position: absolute;
+            left: 40px;
+            top: 120px;
+            height: 40px;
+            background: repeating-linear-gradient(
+              skyblue 0,
+              skyblue 5px,
+              orange 5px,
+              orange 10px
+            );
+            .paragraph {
+              line-height: 40px;
+              color: $color-1-black;
+              font-size: 30px;
+              padding: 0 10px;
+              text-transform: capitalize;
+              width: min-content;
+            }
+          }
+          .ccv-group {
+            position: absolute;
+            left: 232px;
+            top: 96px;
+            width: 20%;
+            .label {
+              display: block;
+            }
+            .text {
+              display: block;
+              background: $color-1-white;
+              height: 40px;
+              color: $color-1-black;
+              padding: 10px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .reservation-code {
+      font-size: 6vw;
+      font-family: "VT323", monospace;
+      background-color: $color-1-purple;
+      width: fit-content;
+      padding: 10px;
+      margin: auto;
+    }
+  }
+}

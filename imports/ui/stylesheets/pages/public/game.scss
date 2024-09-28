@@ -1,0 +1,26 @@
+.public-body {
+  .view-game {
+    .default-image, .image {
+      cursor: pointer;
+      // &:hover {
+      //   transition: 0.6s;
+      //   transform: scale(1.1);
+      // }
+      &.selected {
+        border-style: solid;
+        border-width: 4px;
+        border-color: $color-1-purple;
+      }
+    }
+    .view-mini-game {
+      cursor: pointer;
+      &:hover {
+        transition: 0.4s;
+        transform: scale(1.1);
+        border-style: solid;
+        border-width: 2px;
+        border-color: $color-1-purple;
+      }
+    }
+  }
+}

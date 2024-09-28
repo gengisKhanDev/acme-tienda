@@ -1,0 +1,68 @@
+<template name="global_sign_up">
+  <div class="sign-up">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 sign-up-div animate__animated animate__fadeIn">
+          <img src="/logos/black.png" alt="logo" class="logo">
+
+          <form id="addUser">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control format-name" placeholder="First Name" id="firstName" autofocus
+                    required>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control format-name" placeholder="Last Name" id="lastName" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" autofocus required>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="text-center">
+                <label class="checkmark-container">
+                  <input type="checkbox" class="check" checked="yes" id="signature" required>
+                  <span class="checkmark"></span>
+                  <p>Yes, i want to receive future email notifications about events and promotions. <a href="/privacy-policy"> Read More</a> </p>
+                </label>
+              </div>
+            </div>
+
+            <div class="col-12 mt-2">
+              <div class="d-grid">
+                <button type="submit" id="addUserBtn" class="btn btn-primary btn-block">
+                  Register
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="text-center">
+            <hr>
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!--                 <div class="drop-zone" id="image" style="background-image: url('{{event.image.base64}}')">
+                  <input type="file" accept="image/*" class="file" />
+                  <h4 class="text" style="font-size: 16px; background-color: #ffff; color: black;">
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i> <br> Add Your Photo</h4>
+                </div> -->

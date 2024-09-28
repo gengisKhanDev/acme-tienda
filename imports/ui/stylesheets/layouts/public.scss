@@ -1,0 +1,16 @@
+.public-body {
+  .page-title {
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 700;
+    color: $color-1-white;
+  }
+
+  color: $color-1-white;
+  background-color: $color-1-black;
+  background-image: url("/background.webp");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  letter-spacing: 0.02em;
+}

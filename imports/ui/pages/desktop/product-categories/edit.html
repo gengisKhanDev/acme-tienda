@@ -1,0 +1,83 @@
+<template name="desktop_product_categories_edit">
+  {{#if Template.subscriptionsReady}}
+    <div class="container-fluid container-white">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center fw-bolder">Edit Product Category</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <form id="editproductCategory">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="string" class="form-control input format-name"  id="codPostal" value="{{productCategory.codPostal}}" autofocus
+                    required>
+                  <label>Código postal</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name"  id="ciudad" value="{{productCategory.ciudad}}" autofocus
+                    required>
+                  <label>Ciudad</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name"  id="direccion" autofocus value="{{productCategory.direccion}}"
+                    required>
+                  <label>Dirección</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="number" class="form-control input format-phone"  id="telefono" autofocus
+                  value="{{productCategory.telefono}}" required>
+                  <label>Telefono</label>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <div class="mt-4">
+                  <button type="submit" class="btn" style="border-radius: 5px !important;
+                  background-color: #425f8b;
+                  color: #ffff;
+                  width: 200px;">
+                    Editar
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label for="name">Name*</label>
+                  <input type="text" minlength="3" class="form-control format-name"
+                    id="name" placeholder="Enter Name" autocomplete="off"
+                    value="{{productCategory.codPostal}}" required>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="d-grid mt-4">
+                  <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-plus-square"></i> Edit
+                    </button>
+                    <button type="button" class="btn btn-danger mx-2"
+                      id="deleteProductCategory">
+                      <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    {{> loader}}
+  {{/if}}
+</template>

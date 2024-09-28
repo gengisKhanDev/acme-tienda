@@ -1,0 +1,9 @@
+.desktop-body {
+  .unit-edit {
+    .image {
+      width: 260px;
+      height: 100%;
+      @include fadeIn;
+    }
+  }
+}

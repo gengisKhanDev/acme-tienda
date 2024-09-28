@@ -1,0 +1,73 @@
+<template name="desktop_products_edit">
+  <!-- {{#if Template.subscriptionsReady}} -->
+    <div class="container-fluid container-white">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center fw-bolder">Editar prenda</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <form id="editProduct">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="tipo" value="{{product.tipo}}" autofocus required>
+                  <label>Tipo</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="marca"  value="{{product.marca}}" autofocus required>
+                  <label>Marca</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="talla" value="{{product.talla}}" autofocus required>
+                  <label>Talla</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="text" class="form-control input" id="color" value="{{product.color}}" autofocus required>
+                  <label>Color</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="number" class="form-control input" id="cantidad" value="{{product.cantidad}}" autofocus required>
+                  <label>Cantidad</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <select class="form-control select2" id="ciudad"  required>
+                    <option></option>
+                    {{#each productCategory in productCategories}}
+                      <option value="{{productCategory._id}}">{{productCategory.ciudad}}</option>
+                    {{/each}}
+                  </select>
+                  <label>Seleccione la Sede</label>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <div class="mt-4">
+                  <button type="submit" class="btn" style="border-radius: 5px !important;
+                  background-color: #425f8b;
+                  color: #ffff;
+                  width: 200px;">
+                    Editar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- {{else}}
+    {{> loader}}
+  {{/if}} -->
+</template>

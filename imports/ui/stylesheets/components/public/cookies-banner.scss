@@ -1,0 +1,11 @@
+.public-body {
+  .cookies-banner {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px;
+    color: $color-1-white;
+    background-color: $color-1-black;
+    z-index: 99999;
+  }
+}

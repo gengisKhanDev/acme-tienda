@@ -1,0 +1,79 @@
+<template name="desktop_mas_sedes">
+  <!-- {{#if Template.subscriptionsReady}} -->
+    <div class="container-fluid mas-sedes container-white">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center fw-bolder">Añadir a la prenda otra sede y cantidad</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <form id="masSedes">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="tipo" value="{{product.tipo}}" disabled autofocus required>
+                  <label class="label">Tipo</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="marca"  value="{{product.marca}}" disabled autofocus required>
+                  <label class="label">Marca</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="talla" value="{{product.talla}}" disabled autofocus required>
+                  <label class="label">Talla</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 pb-5">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-phone" id="color" value="{{product.color}}" disabled autofocus required>
+                  <label class="label">Color</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <input type="text" class="form-control input format-name" id="descripcion" value="{{product.descripcion}}" disabled autofocus required>
+                  <label class="label">descripcion</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 mb-4">
+                <div class="styled-input">
+                  <input type="number" class="form-control input format-phone" id="cantidad" autofocus required>
+                  <label>Cantidad</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="styled-input">
+                  <select class="form-control select2" id="ciudad" required>
+                    <option></option>
+                    {{#each productCategory in productCategories}}
+                      <option value="{{productCategory._id}}">{{productCategory.ciudad}}</option>
+                    {{/each}}
+                  </select>
+                  <label>Seleccione la Sede</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 text-center">
+                <div class="mt-4">
+                  <button type="submit" class="btn" style="border-radius: 5px !important;
+                  background-color: #425f8b;
+                  color: #ffff;
+                  width: 200px;">
+                    Añadir Sede
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- {{else}}
+    {{> loader}}
+  {{/if}} -->
+</template>

@@ -1,0 +1,265 @@
+.desktop-body {
+  .edit-run {
+    height: inherit;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .h3 {
+      font-size: 16px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $color-1-white;
+      color: $color-1-black;
+    }
+    .h5 {
+      font-size: 16px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $color-1-white;
+      color: $color-1-black;
+    }
+    .h6 {
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $color-1-white;
+      color: $color-1-black;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+      .nav-buttons {
+        .btn {
+          margin-bottom: 5px;
+          width: 100%;
+        }
+        .btn-danger {
+          float: none !important;
+        }
+      }
+      .nav {
+        .nav-item {
+          .nav-link {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .logs {
+      height: 600px;
+      overflow-y: scroll;
+      .log {
+        position: relative;
+        background-color: $color-1-white;
+        color: $color-1-black;
+        height: 60px;
+        width: 99%;
+        margin-top: 10px;
+        text-align: left;
+        padding: 14px;
+        min-height: 100px;
+        overflow-y: scroll;
+        .text {
+          font-size: 14px;
+          position: absolute;
+          left: 10px;
+          .created-by {
+            font-weight: bolder;
+            color: $color-1-black;
+          }
+        }
+        .time {
+          font-size: 10px;
+          position: absolute;
+          right: 16px;
+          top: 12px;
+        }
+      }
+    }
+    .comments {
+      margin-bottom: 10px;
+      height: 280px !important;
+      overflow: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      .comment {
+        position: relative;
+        line-height: normal;
+        width: 100%;
+        float: right;
+        color: $color-1-white;
+        padding: 6px;
+        padding-top: 16px;
+        word-break: break-all;
+        border: none;
+        margin-bottom: 12px;
+        &.owner {
+          background-color: $color-1-blue;
+        }
+        &.other {
+          background-color: $color-1-grey;
+        }
+        .fa-thumbtack {
+          position: absolute;
+          right: 28px;
+          top: 2px;
+          &.pinned {
+            color: $color-1-green;
+          }
+        }
+        .internal {
+          position: absolute;
+          right: 48px;
+          top: 2px;
+          background-color: $color-1-grey;
+          padding: 2px;
+          font-size: 10px;
+        }
+        .external {
+          position: absolute;
+          right: 0px;
+          top: 2px;
+          background-color: $color-1-red;
+          padding: 2px;
+          font-size: 10px;
+        }
+        .time-stamp {
+          font-size: 12px;
+        }
+      }
+      .added-by{
+        font-size: 12px;
+      }
+    }
+    .diagram {
+      margin: auto;
+      .front {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("/diagrams/front.png");
+        height: 300px;
+        width: 100%;
+      }
+      .back {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("/diagrams/back.png");
+        height: 300px;
+        width: 100%;
+      }
+    }
+    .pain-scale {
+      .pain-level {
+        margin: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        &.active {
+          @include popIn;
+          border-color: $color-1-blue;
+          border-width: 4px;
+          border-style: solid;
+        }
+      }
+    }
+    .level-of-consciousness {
+      .level {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $color-2-grey;
+        background-color: $color-1-white;
+        color: $color-1-grey;
+        font-size: 22px;
+        &.active {
+          background-color: $color-1-blue;
+          color: $color-1-white;
+        }
+      }
+    }
+    .narrative-tab {
+      font-size: 14px;
+      color: $color-1-black;
+      strong {
+        color: $color-1-blue;
+      }
+    }
+
+    .time-stamps {
+      margin: auto;
+      margin-top: 20px;
+      border-width: 1px;
+      border-color: $color-2-grey;
+      border-style: solid;
+      .time-stamp {
+        height: 60px;
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-right-color: $color-2-grey;
+        &.done {
+          @include fadeIn;
+          color: $color-1-white;
+          background-color: $color-2-green;
+        }
+        .text {
+          word-wrap: break-word
+        }
+        .time {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .time-stamps .col-md-3:last-child {
+      .time-stamp {
+        border-right: none !important;
+      }
+    }
+
+    .fa-check {
+      font-size: 22px;
+      color: $color-1-blue;
+    }
+    .not-paid {
+      color: $color-1-red;
+    }
+    .paid {
+      color: $color-1-green;
+    }
+  }
+  .icd10-code {
+    .badge {
+      position: inherit;
+      font-size: 22px;
+      left: 16px;
+      bottom: -8px;
+    }
+    .fa-times-circle {
+      position: relative;
+      left: -18px;
+      top: -10px;
+      cursor: pointer;
+      color: $color-1-red;
+      background-color: $color-1-white;
+      border-radius: 50%;
+      &:hover {
+        color: $color-2-red;
+        transition: 0.4s;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .ql-editor {
+    min-height: 420px;
+  }
+}

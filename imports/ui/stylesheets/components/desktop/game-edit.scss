@@ -1,0 +1,69 @@
+.desktop-body {
+  .styled-input {
+    float: left;
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+    .input:focus ~ label,
+    select:focus ~ label,
+    .input:valid ~ label,
+    select:valid ~ label {
+      font-size: 0.75em;
+      color: #a0a0a0;
+      top: -12px;
+      -webkit-transition: all 0.225s ease;
+      transition: all 0.225s ease;
+    }
+    label {
+      color: rgb(0, 0, 0);
+      padding: 1.2rem 30px 1rem 21px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+  
+    .input {
+      padding: 20px;
+      border: 0;
+      width: 100%;
+      font-size: 1rem;
+      background-color: rgb(214, 214, 214);
+      color: rgb(0, 0, 0);
+      border-radius: 4px;
+    }
+    select {
+      padding: 20px;
+      border: 0;
+      width: 100%;
+      font-size: 1rem;
+      background-color: rgb(214, 214, 214);
+      color: rgb(0, 0, 0);
+      border-radius: 4px;
+    }
+  }
+  .game-edit {
+    .images {
+      .image-col {
+        position: relative;
+        .image {
+          height: auto;
+          width: 100%;
+          &:hover {
+            transition: 0.4s;
+            transform: scale(1.1);
+          }
+        }
+        .default {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: auto;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

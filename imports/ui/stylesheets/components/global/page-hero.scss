@@ -1,0 +1,26 @@
+.page-hero {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  .description {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    bottom: 0px;
+    color: $color-1-purple;
+  }
+  .title {
+    text-align: center;
+    color: $color-1-white;
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: 50%;
+      bottom: 25%;
+    }
+  }
+}

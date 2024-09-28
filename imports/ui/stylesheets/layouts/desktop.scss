@@ -1,0 +1,28 @@
+.desktop-body {
+  color: $color-1-purple !important;
+  background-color: $color-1-white;
+  height: 100vh;
+  width: auto;
+  padding-top: 10px;
+  margin-left: 78px;
+
+  //Device = Tablets, Ipads (portrait)
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: auto;
+  }
+  //Device = Low Resolution Tablets, Mobiles (Landscape)
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: auto;
+  }
+  //Device = Most of the Smartphones Mobiles (portrait)
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin-left: 0%;
+  }
+
+  .page-title {
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 700;
+    color: $color-1-purple;
+  }
+}

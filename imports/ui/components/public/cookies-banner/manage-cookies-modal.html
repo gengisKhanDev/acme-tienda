@@ -1,0 +1,51 @@
+<template name="public_manages_cookies_modal">
+  <div class="modal fade" id="manageCookiesModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Cookies & Privacy</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row my-4">
+              <div class="col-8">
+                <h4>Necessary / Essential Cookies</h4>
+              </div>
+              <div class="col-4">
+                <span class="badge bg-success">Always Active</span>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-8">
+                <h4>Functionality Cookies</h4>
+              </div>
+              <div class="col-4">
+                <label class="switch">
+                  <input type="checkbox" id="emergency" checked="{{isChecked 'emergency'}}">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-8">
+                <h4>Necessary / Essential Cookies</h4>
+              </div>
+              <div class="col-4">
+                <label class="switch">
+                  <input type="checkbox" id="emergency" checked="{{isChecked 'emergency'}}">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

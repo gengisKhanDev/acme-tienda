@@ -1,0 +1,19 @@
+.desktop-body {
+  .nav {
+    .nav-item {
+      .nav-link {
+        &.disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .inventory-edit {
+    .created-by {
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    }
+  }
+}

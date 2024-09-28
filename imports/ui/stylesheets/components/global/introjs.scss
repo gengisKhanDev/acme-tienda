@@ -1,0 +1,19 @@
+.introjs-tooltip {
+  border-radius: 0px !important;
+}
+
+.introjs-button {
+  text-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.introjs-tooltipbuttons {
+  .introjs-prevbutton {
+    color: $color-1-white !important;
+    background-color: $color-1-blue !important;
+  }
+  .introjs-nextbutton {
+    color: $color-1-white !important;
+    background-color: $color-1-blue !important;
+  }
+}
