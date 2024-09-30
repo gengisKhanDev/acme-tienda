@@ -8,4 +8,3 @@ import "./created-by.js";
 import "./colors.js";
 import "./format-date.js";
 
-import "./crons/check-upcoming-birthdays.js";
