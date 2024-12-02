@@ -32,8 +32,8 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/gengisKhanDev/acme-tienda.git
+   cd acme-tienda
    ```
 
 2. Instala Meteor.js (si aún no lo tienes):
