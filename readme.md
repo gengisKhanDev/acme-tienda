@@ -1,6 +1,6 @@
 # Proyecto de Gestor de Inventario
 
-Este proyecto permite gestionar de forma eficaz el inventario de productos en una cadena de tiendas minoristas, proporcionando funcionalidades clave como la actualización en tiempo real, la administración de pedidos y proveedores, y el control de calidad de productos perecederos.
+Este proyecto permite gestionar de forma eficaz el inventario de productos en una cadena de tiendas minoristas, proporcionando funcionalidades como la actualización en tiempo real, la administración de pedidos y proveedores, y el control de calidad de productos perecederos.
 
 ## Características
 
