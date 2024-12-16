@@ -1,9 +1,9 @@
-import { ProductCategories } from "../product-categories.js";
+import { Sede } from "../sede.js";
 
 import { check } from "meteor/check";
 
 if(Meteor.isServer){
-  ReactiveTable.publish("productCategories", ProductCategories, {},{
+  ReactiveTable.publish("productCategories", Sede, {},{
       fields: {
         _id: 1,
        codPostal: 1,
@@ -19,15 +19,15 @@ if(Meteor.isServer){
     if(Meteor.userId()){
       check(id, String);
 
-      return ProductCategories.find({_id: id});
+      return Sede.find({_id: id});
     } else {
       return [];
     }
   });
 
-  Meteor.publish("get.product-categories", () => {
+  Meteor.publish("get.sede", () => {
     if(Meteor.userId()){
-      return ProductCategories.find({});
+      return Sede.find({});
     } else {
       return [];
     }

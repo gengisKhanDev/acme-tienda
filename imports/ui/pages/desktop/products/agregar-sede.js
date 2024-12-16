@@ -1,5 +1,5 @@
 import "./agregar-sede.html";
-import { ProductCategories } from "../../../../api/product-categories/product-categories.js";
+import { Sede } from "../../../../api/sede/sede.js";
 import { Products } from "../../../../api/products/products.js";
 
 
@@ -7,7 +7,7 @@ Template.desktop_agregar_sede.onCreated(function(){
   document.title = "ACME - Edit Product";
   Tracker.autorun(() => {
     checkUserRole(["Super Admin", "Admin", "Employee"]);
-    this.subscribe("get.product-categories");
+    this.subscribe("get.sede");
     //this.subscribe("get.product");
     this.subscribe("get.product", FlowRouter.getParam("id"), "#general-tab");
     const products = Products.findOne({_id: FlowRouter.getParam("id")});
@@ -25,8 +25,8 @@ Template.desktop_agregar_sede.onRendered(function(){
 
 Template.desktop_agregar_sede.helpers({
   productCategories(){
-    console.log(ProductCategories.find({}))
-    return ProductCategories.find({});
+    console.log(Sede.find({}))
+    return Sede.find({});
   },
   product(){
     return Session.get("Products");

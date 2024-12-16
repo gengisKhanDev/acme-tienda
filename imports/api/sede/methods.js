@@ -1,4 +1,4 @@
-import { ProductCategories } from "./product-categories.js";
+import { Sede } from "./sede.js";
 import { Products } from "../products/products.js";
 
 import { check } from "meteor/check";
@@ -11,7 +11,7 @@ Meteor.methods({
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");
     }
-    return ProductCategories.insert({
+    return Sede.insert({
       codPostal: codPostal,
       ciudad: ciudad,
       direccion: direccion,
@@ -30,7 +30,7 @@ Meteor.methods({
     console.log(ciudad)
     console.log(direccion)
 
-    ProductCategories.update({_id: id},{
+    Sede.update({_id: id},{
       $set: {
         codPostal: codPostal,
         ciudad: ciudad,
@@ -58,6 +58,6 @@ Meteor.methods({
       throw new Meteor.Error("attached", "Can't delete this category because it's attached to product(s)");
     }
 
-    ProductCategories.remove({_id: id});
+    Sede.remove({_id: id});
   }
 });

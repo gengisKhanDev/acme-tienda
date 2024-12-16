@@ -1,6 +1,6 @@
 import { Users } from "./users.js";
 import { Products } from "../products/products.js";
-import { ProductCategories } from "../product-categories/product-categories.js";
+import { Sede } from "../sede/sede.js";
 import { Settings } from "../settings/settings.js";
 
 import { check } from "meteor/check";
@@ -150,7 +150,7 @@ Meteor.methods({
       }
     });
 
-    ProductCategories.update({"createdBy.id": id},{
+    Sede.update({"createdBy.id": id},{
       $set: {
         "createdBy.name": firstName + " " + lastName
       }

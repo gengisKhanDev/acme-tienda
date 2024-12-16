@@ -24,9 +24,9 @@ import "../../../ui/components/global/offline-alert/offline-alert.js";
 // import "../../../ui/pages/desktop/contact-us/contact-us.js";
 
 ///product Categories
-import "../../../ui/pages/desktop/product-categories/product-categories.js";
-import "../../../ui/pages/desktop/product-categories/add.js";
-import "../../../ui/pages/desktop/product-categories/edit.js";
+import "../../../ui/pages/desktop/sede/sede.js";
+import "../../../ui/pages/desktop/sede/add.js";
+import "../../../ui/pages/desktop/sede/edit.js";
 import "../../../ui/pages/desktop/users/users.js";
 ///products
 import "../../../ui/pages/desktop/products/products.js";
@@ -103,8 +103,8 @@ BlazeLayout.setRoot("body");
 
 
 //product Categories
-FlowRouter.route("/admin/product-categories", {
-  name: "desktop.product-categories",
+FlowRouter.route("/admin/sede", {
+  name: "desktop.sede",
   triggersEnter: [(context) => {
     if(!Meteor.userId()){
       FlowRouter.go("/");
@@ -112,13 +112,13 @@ FlowRouter.route("/admin/product-categories", {
     else {
       BlazeLayout.render("desktop_body", {
         sidebar: "desktop_sidebar",
-        main: "desktop_product_categories"
+        main: "desktop_sede"
       });
     }
   }]
 });
-FlowRouter.route("/admin/product-categories/add", {
-  name: "desktop.product-categories-add",
+FlowRouter.route("/admin/sede/add", {
+  name: "desktop.sede-add",
   triggersEnter: [(context) => {
     if(!Meteor.userId()){
       FlowRouter.go("/");
@@ -126,12 +126,12 @@ FlowRouter.route("/admin/product-categories/add", {
     else {
       BlazeLayout.render("desktop_body", {
         sidebar: "desktop_sidebar",
-        main: "desktop_product_categories_add"
+        main: "desktop_sede_add"
       });
     }
   }]
 });
-FlowRouter.route("/admin/product-categories/:id", {
+FlowRouter.route("/admin/sede/:id", {
   name: "desktop.product.categories-edit",
   triggersEnter: [(context) => {
     if(!Meteor.userId()){
@@ -140,7 +140,7 @@ FlowRouter.route("/admin/product-categories/:id", {
     else {
       BlazeLayout.render("desktop_body", {
         sidebar: "desktop_sidebar",
-        main: "desktop_product_categories_edit"
+        main: "desktop_sede_edit"
       });
     }
   }]

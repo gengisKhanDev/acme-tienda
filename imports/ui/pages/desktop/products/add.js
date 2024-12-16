@@ -1,13 +1,13 @@
 import "./add.html";
 
-import { ProductCategories } from "../../../../api/product-categories/product-categories.js";
+import { Sede } from "../../../../api/sede/sede.js";
 import { ReactiveVar } from 'meteor/reactive-var';
 
 Template.desktop_products_add.onCreated(function(){
   document.title = "ACME - Add Product";
   Tracker.autorun(() => {
     checkUserRole(["Super Admin", "Admin", "Employee"]);
-    this.subscribe("get.product-categories");
+    this.subscribe("get.sede");
   });
   this.selectedCategory = new ReactiveVar('');
 

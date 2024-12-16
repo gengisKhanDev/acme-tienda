@@ -1,18 +1,18 @@
 import "./add.html";
 
-Template.desktop_product_categories_add.onCreated(function(){
-  document.title = "ACME - Add Product Category";
+Template.desktop_sede_add.onCreated(function(){
+  document.title = "ACME - Add Sede";
   Tracker.autorun(() => {
     checkUserRole(["Super Admin", "Admin", "Employee"]);
   });
 });
 
-Template.desktop_product_categories_add.onRendered(function(){
+Template.desktop_sede_add.onRendered(function(){
   initFormatName();
   
 });
 
-Template.desktop_product_categories_add.events({
+Template.desktop_sede_add.events({
   "submit #addProductCategory"(event){
     event.preventDefault();
 
@@ -38,7 +38,7 @@ Template.desktop_product_categories_add.events({
         document.getElementById("addProductCategory").reset();
         disableBtn("form", false, "Add");
         yoloAlert("success", "Sede Agregada!");
-        FlowRouter.go(`/admin/Product-categories/${result}`);
+        FlowRouter.go(`/admin/sede/${result}`);
       }
     });
   }

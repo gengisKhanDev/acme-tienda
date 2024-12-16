@@ -11,8 +11,8 @@ import "../../api/users/server/publications.js";
 // import "../../api/game-categories/server/publications.js";
 
 //Product Categories
-import "../../api/product-categories/methods.js";
-import "../../api/product-categories/server/publications.js";
+import "../../api/sede/methods.js";
+import "../../api/sede/server/publications.js";
 
 //Products
 import "../../api/products/methods.js";

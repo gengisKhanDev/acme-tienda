@@ -1,5 +1,5 @@
 import { Products } from "./products.js";
-import { ProductCategories } from "../product-categories/product-categories.js"
+import { Sede } from "../sede/sede.js"
 
 import { check } from "meteor/check";
 import { Random } from "meteor/random";
@@ -12,7 +12,7 @@ Meteor.methods({
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");
     }
-    // const productCategory = ProductCategories.findOne({_id: ciudad});
+    // const productCategory = Sede.findOne({_id: ciudad});
     // const productCategoryObj = {
     //   id: productCategory._id,
     //   ciudad: productCategory.ciudad
@@ -34,7 +34,7 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    const productCategory = ProductCategories.findOne({_id: ciudad});
+    const productCategory = Sede.findOne({_id: ciudad});
     const productCategoryObj = {
       id: productCategory._id,
       ciudad: productCategory.ciudad
@@ -53,7 +53,7 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    const productCategory = ProductCategories.findOne({_id: ciudad});
+    const productCategory = Sede.findOne({_id: ciudad});
     const productCategoryObj = {
       id: productCategory._id,
       ciudad: productCategory.ciudad
@@ -77,7 +77,7 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    const productCategory = ProductCategories.findOne({_id: ciudad});
+    const productCategory = Sede.findOne({_id: ciudad});
     const productCategoryObj = {
       id: productCategory._id,
       ciudad: productCategory.ciudad

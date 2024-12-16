@@ -1,34 +1,34 @@
 import "./edit.html";
 
-import { ProductCategories } from "../../../../api/product-categories/product-categories";
+import { Sede } from "../../../../api/sede/sede";
 
-Template.desktop_product_categories_edit.onCreated(function () {
+Template.desktop_sede_edit.onCreated(function () {
   document.title = "ACME - Edit Product Category";
   Tracker.autorun(() => {
     checkUserRole(["Super Admin", "Admin", "Employee"]);
     this.subscribe("get.product-category", FlowRouter.getParam("id"), "#general-tab");
-    const productCategory = ProductCategories.findOne({_id: FlowRouter.getParam("id")});
+    const productCategory = Sede.findOne({_id: FlowRouter.getParam("id")});
     if(this.subscriptionsReady()){
       Session.set("productCategory", productCategory);
     }
   });
 });
 
-Template.desktop_product_categories_edit.onRendered(function () {
+Template.desktop_sede_edit.onRendered(function () {
   initFormatName();
 });
 
-Template.desktop_product_categories_edit.onDestroyed(function () {
+Template.desktop_sede_edit.onDestroyed(function () {
   Session.set("productCategory", {});
 });
 
-Template.desktop_product_categories_edit.helpers({
+Template.desktop_sede_edit.helpers({
   productCategory(){
     return Session.get("productCategory");
   }
 });
 
-Template.desktop_product_categories_edit.events({
+Template.desktop_sede_edit.events({
   "submit #editproductCategory"(event){
     event.preventDefault();
 
@@ -49,7 +49,7 @@ Template.desktop_product_categories_edit.events({
       else {
         disableBtn("form", false, "Edit");
         yoloAlert("success", "Edited Product Category!");
-        FlowRouter.go(`/admin/Product-categories`);
+        FlowRouter.go(`/admin/sede`);
       }
     });
   },
@@ -78,7 +78,7 @@ Template.desktop_product_categories_edit.events({
           else {
             yoloAlert("success", "Deleted Product Category!");
             disableBtn(`#deleteProductCategory`, false, `<i class="fas fa-trash-alt"></i> Delete`);
-            FlowRouter.go("/admin/product-categories");
+            FlowRouter.go("/admin/sede");
           }
         });
       }

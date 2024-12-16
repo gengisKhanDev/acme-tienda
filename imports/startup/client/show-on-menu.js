@@ -1,4 +1,4 @@
-import { Products } from "../api/products/products.js";
+import { Products } from "../../api/products/products.js";
 //
 showOnMenu = (id) => {
   return new Spacebars.SafeString(`<label class="checkmark-container">

@@ -1,6 +1,6 @@
-import "./product-categories.html";
+import "./sede.html";
 
-Template.desktop_product_categories.onCreated(function(){
+Template.desktop_sede.onCreated(function(){
   document.title = "ACME - Product Categories";
   this.isSubscriptionReady = new ReactiveVar(false);
   Tracker.autorun(() => {
@@ -8,7 +8,7 @@ Template.desktop_product_categories.onCreated(function(){
   });
 });
 
-Template.desktop_product_categories.helpers({
+Template.desktop_sede.helpers({
   isSubscriptionReady(){
     return Template.instance().isSubscriptionReady.get();
   },
@@ -44,7 +44,7 @@ Template.desktop_product_categories.helpers({
                   data-id="${id}">
                   <i class="fas fa-trash-alt" data-id="${id}"></i>
                 </button>
-                <a href="/admin/product-categories/${id}" role="button" class="btn btn-primary">
+                <a href="/admin/sede/${id}" role="button" class="btn btn-primary">
                 <i class="fas fa-pencil-alt"></i>
               </a>
               </div>
@@ -55,7 +55,7 @@ Template.desktop_product_categories.helpers({
   }
 });
 
-Template.desktop_product_categories.events({
+Template.desktop_sede.events({
   "click .delete-product-category"(event){
     sourAlert({
       type: "question",
@@ -81,7 +81,7 @@ Template.desktop_product_categories.events({
           else {
             yoloAlert("success", "Deleted Product Category!");
             disableBtn(`.delete-product-category[data-id=${id}]`, false, `<i class="fas fa-trash-alt"></i> Delete`);
-            FlowRouter.go("/admin/product-categories");
+            FlowRouter.go("/admin/sede");
           }
         });
       }
