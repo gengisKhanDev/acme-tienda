@@ -2,7 +2,7 @@
   <div class="container-fluid container-white">
     <div class="row">
       <div class="col-12">
-        <h2 class="text-center fw-bolder">Añadir Prenda:</h2>
+        <h2 class="text-center fw-bolder">Añadir Producto:</h2>
       </div>
     </div>
 
@@ -10,30 +10,78 @@
       <div class="col-12">
         <form id="addProduct">
           <div class="row">
+            <!-- Categoría -->
             <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="text" class="form-control input format-name" id="tipo" autofocus required>
-                <label>Tipo</label>
+                <select class="form-control select2" id="categoria" required>
+                  <option value=""></option>
+                  <option value="Electrónicos">Electrónicos</option>
+                  <option value="Ropa">Ropa</option>
+                  <option value="Alimentos Perecederos">Alimentos Perecederos</option>
+                  <option value="Artículos de Temporada">Artículos de Temporada</option>
+                </select>
+                <label>Seleccionar Categoría</label>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6">
+
+            <!-- Nombre -->
+            <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="text" class="form-control input format-name" id="marca" autofocus required>
-                <label>Marca</label>
+                <input type="text" class="form-control input format-name" id="nombre" autofocus required>
+                <label>Nombre</label>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6">
+
+            <!-- Número de Serie -->
+            <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="text" class="form-control input format-name" id="color" autofocus required>
-                <label>Color</label>
+                <input type="text" class="form-control input format-name" id="nserie" autofocus required>
+                <label>Número de Serie</label>
               </div>
             </div>
+
+            <!-- Descripción -->
             <div class="col-sm-12 col-md-6">
               <div class="styled-input">
                 <input type="text" class="form-control input format-name" id="descripcion" autofocus required>
                 <label>Descripcion</label>
               </div>
             </div>
+
+            <!-- Precio -->
+            <div class="col-sm-12 col-md-6">
+              <div class="styled-input">
+                <input type="number" class="form-control input format-name" id="precio" autofocus required>
+                <label>Precio</label>
+              </div>
+            </div>
+
+            <!-- Stock -->
+            <div class="col-sm-12 col-md-6">
+              <div class="styled-input">
+                <input type="number" class="form-control input format-name" id="stock" autofocus required>
+                <label>Stock</label>
+              </div>
+            </div>
+
+            <!-- Campos Específicos por Categoría -->
+            {{#if isCategory "Electrónicos"}}
+              {{> categoriaElectronicos}}
+            {{/if}}
+
+            {{#if isCategory "Ropa"}}
+              {{> categoriaRopa}}
+            {{/if}}
+
+            {{#if isCategory "Alimentos Perecederos"}}
+              {{> categoriaAlimentosPerecederos}}
+            {{/if}}
+
+            {{#if isCategory "Artículos de Temporada"}}
+              {{> categoriaArticulosTemporada}}
+            {{/if}}
+
+            <!-- Botón de Envío -->
             <div class="col-12 text-center">
               <div class="mt-4">
                 <button type="submit" class="btn" style="border-radius: 5px !important;
@@ -49,4 +97,132 @@
       </div>
     </div>
   </div>
+</template>
+
+<!-- Sub-templates para cada categoría -->
+
+<template name="categoriaElectronicos">
+  <div class="col-12">
+    <h4>Detalles de Electrónicos</h4>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="marca_electronico" required>
+      <label>Marca</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="modelo_electronico" required>
+      <label>Modelo</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="garantia_electronico" required>
+      <label>Garantía</label>
+    </div>
+  </div>
+  <!-- Puedes agregar más campos específicos -->
+</template>
+
+<template name="categoriaRopa">
+  <div class="col-12">
+    <h4>Detalles de Ropa</h4>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="marca_ropa" required>
+      <label>Marca</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <select class="form-control select2" id="talla_ropa" required>
+        <option value=""></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <label>Seleccionar Talla</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="material_ropa" required>
+      <label>Material</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <select class="form-control select2" id="genero_ropa" required>
+        <option value=""></option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Unisex">Unisex</option>
+      </select>
+      <label>Seleccionar Género</label>
+    </div>
+  </div>
+  <!-- Puedes agregar más campos específicos -->
+</template>
+
+<template name="categoriaAlimentosPerecederos">
+  <div class="col-12">
+    <h4>Detalles de Alimentos Perecederos</h4>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <!-- <input type="date" class="form-control" id="dob" required> -->
+
+      <input type="date" class="form-control input" id="fecha_vencimiento" required>
+      <label>Fecha de Vencimiento</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="condiciones_almacenamiento" required>
+      <label>Condiciones de Almacenamiento</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="number" class="form-control input format-name" id="peso_alimento" required>
+      <label>Peso (kg)</label>
+    </div>
+  </div>
+  <!-- Puedes agregar más campos específicos -->
+</template>
+
+<template name="categoriaArticulosTemporada">
+  <div class="col-12">
+    <h4>Detalles de Artículos de Temporada</h4>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <select class="form-control select2" id="temporada_articulo" required>
+        <option value="">Seleccionar Temporada</option>
+        <option value="Primavera">Primavera</option>
+        <option value="Verano">Verano</option>
+        <option value="Otoño">Otoño</option>
+        <option value="Invierno">Invierno</option>
+      </select>
+      <label>Temporada</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="number" class="form-control input format-name" id="anio_articulo" required>
+      <label>Año</label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 pb-5">
+    <div class="styled-input">
+      <input type="text" class="form-control input format-name" id="material_articulo" required>
+      <label>Material</label>
+    </div>
+  </div>
+  <!-- Puedes agregar más campos específicos -->
 </template>
