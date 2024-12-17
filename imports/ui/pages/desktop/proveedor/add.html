@@ -1,0 +1,56 @@
+<template name="desktop_proveedor_add">
+  <div class="container-fluid container-white">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center fw-bolder">Añadir Proveedor:</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <form id="addProveedor">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 pb-5">
+              <div class="styled-input">
+                <input type="text" class="form-control input format-name" id="nombre" autofocus required>
+                <label>Nombre:</label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 pb-5">
+              <div class="styled-input">
+                <input type="text" class="form-control input format-name" id="address" placeholder="" autofocus required>
+                <label>Dirección:</label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 pb-5">
+              <div class="styled-input">
+                <input type="number" class="form-control input" id="phone" autofocus required>
+                <label>Telefono:</label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+              <div class="styled-input">
+                <input type="email" class="form-control input format-name" id="email" autofocus required>
+                <label>Email:</label>
+              </div>
+            </div>
+
+            <div class="col-12 text-center">
+              <div class="mt-4">
+                <button type="submit" class="btn" style="border-radius: 5px !important;
+                background-color: #425f8b;
+                color: #ffff;
+                width: 200px;">
+                  Confirmar
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -23,11 +23,17 @@ import "../../../ui/components/global/offline-alert/offline-alert.js";
 ///Contact Us
 // import "../../../ui/pages/desktop/contact-us/contact-us.js";
 
-///product Categories
+///Sede
 import "../../../ui/pages/desktop/sede/sede.js";
 import "../../../ui/pages/desktop/sede/add.js";
 import "../../../ui/pages/desktop/sede/edit.js";
 import "../../../ui/pages/desktop/users/users.js";
+///Proveedores
+// import "../../../ui/pages/desktop/sede/sede.js";
+import "../../../ui/pages/desktop/proveedor/add.js";
+import "../../../ui/pages/desktop/proveedor/proveedores.js";
+// import "../../../ui/pages/desktop/sede/edit.js";
+// import "../../../ui/pages/desktop/users/users.js";
 ///products
 import "../../../ui/pages/desktop/products/products.js";
 import "../../../ui/pages/desktop/products/add.js";
@@ -273,6 +279,35 @@ FlowRouter.route("/admin/usuarios", {
       BlazeLayout.render("desktop_body", {
         sidebar: "desktop_sidebar",
         main: "desktop_users"
+      });
+    }
+  }]
+});
+
+FlowRouter.route("/admin/proveedor/add", {
+  name: "desktop.proveedor-add",
+  triggersEnter: [(context) => {
+    if(!Meteor.userId()){
+      FlowRouter.go("/");
+    }
+    else {
+      BlazeLayout.render("desktop_body", {
+        sidebar: "desktop_sidebar",
+        main: "desktop_proveedor_add"
+      });
+    }
+  }]
+});
+FlowRouter.route("/admin/proveedores", {
+  name: "desktop.proveedores",
+  triggersEnter: [(context) => {
+    if(!Meteor.userId()){
+      FlowRouter.go("/");
+    }
+    else {
+      BlazeLayout.render("desktop_body", {
+        sidebar: "desktop_sidebar",
+        main: "desktop_proveedores"
       });
     }
   }]

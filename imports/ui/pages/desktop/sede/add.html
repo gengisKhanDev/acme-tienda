@@ -12,32 +12,134 @@
           <div class="row">
             <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="string" class="form-control input format-name"  id="codPostal" autofocus
-                  required>
-                <label>Código postal</label>
+                <input type="text" class="form-control input format-name" id="nombre" autofocus required>
+                <label>Nombre</label>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6">
+
+            <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="text" class="form-control input format-name"  id="ciudad" autofocus
-                  required>
-                <label>Ciudad</label>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <div class="styled-input">
-                <input type="text" class="form-control input format-name"  id="direccion" autofocus
-                  required>
+                <input type="text" class="form-control input format-name" placeholder="" id="address" required>
                 <label>Dirección</label>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6">
+
+            <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <input type="number" class="form-control input format-phone"  id="telefono" autofocus
-                  required>
-                <label>Telefono</label>
+                <input type="number" class="form-control input format-name" id="capacidad" required min="0">
+                <label>Capacidad de Almacenamiento</label>
               </div>
             </div>
+
+            <!-- Sección Horario de Atención -->
+            <div class="col-12 pb-5">
+              <h4>Horario de Atención</h4>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Día</th>
+                    <th>Abierto</th>
+                    <th>Cerrado</th>
+                    <th>Cerrado Día</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Lunes -->
+                  <tr>
+                    <td>Lunes</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="lunes_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="lunes_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="lunes_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Martes -->
+                  <tr>
+                    <td>Martes</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="martes_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="martes_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="martes_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Miércoles -->
+                  <tr>
+                    <td>Miércoles</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="miercoles_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="miercoles_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="miercoles_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Jueves -->
+                  <tr>
+                    <td>Jueves</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="jueves_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="jueves_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="jueves_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Viernes -->
+                  <tr>
+                    <td>Viernes</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="viernes_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="viernes_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="viernes_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Sábado -->
+                  <tr>
+                    <td>Sábado</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="sabado_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="sabado_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="sabado_cerrado_dia">
+                    </td>
+                  </tr>
+                  <!-- Domingo -->
+                  <tr>
+                    <td>Domingo</td>
+                    <td>
+                      <input type="time" class="form-control input horario-abierto" id="domingo_abierto">
+                    </td>
+                    <td>
+                      <input type="time" class="form-control input horario-cerrado" id="domingo_cerrado">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox" class="form-check-input cerrado-dia" id="domingo_cerrado_dia">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Botón de Envío -->
             <div class="col-12 text-center">
               <div class="mt-4">
                 <button type="submit" class="btn" style="border-radius: 5px !important;

@@ -13,7 +13,7 @@
             <!-- Categoría -->
             <div class="col-sm-12 col-md-6 pb-5">
               <div class="styled-input">
-                <select class="form-control select2" id="categoria" required>
+                <select class="form-control" id="categoria" required>
                   <option value=""></option>
                   <option value="Electrónicos">Electrónicos</option>
                   <option value="Ropa">Ropa</option>
@@ -29,6 +29,30 @@
               <div class="styled-input">
                 <input type="text" class="form-control input format-name" id="nombre" autofocus required>
                 <label>Nombre</label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 pb-5">
+              <div class="styled-input">
+                <select class="form-control input" id="sede" required>
+                  <option></option>
+                  {{#each sedes in sede}}
+                    <option value="{{sedes._id}}">{{sedes.nombre}}</option>
+                  {{/each}}
+                </select>
+                <label>Seleccionar Sede</label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 pb-5">
+              <div class="styled-input">
+                <select class="form-control input" id="proveedor" required>
+                  <option></option>
+                  {{#each proveedores in proveedor}}
+                    <option value="{{proveedores._id}}">{{proveedores.nombre}}</option>
+                  {{/each}}
+                </select>
+                <label>Seleccionar Proveedor</label>
               </div>
             </div>
 
@@ -175,8 +199,6 @@
   </div>
   <div class="col-sm-12 col-md-6 pb-5">
     <div class="styled-input">
-      <!-- <input type="date" class="form-control" id="dob" required> -->
-
       <input type="date" class="form-control input" id="fecha_vencimiento" required>
       <label>Fecha de Vencimiento</label>
     </div>
@@ -203,13 +225,13 @@
   <div class="col-sm-12 col-md-6 pb-5">
     <div class="styled-input">
       <select class="form-control select2" id="temporada_articulo" required>
-        <option value="">Seleccionar Temporada</option>
+        <option value=""></option>
         <option value="Primavera">Primavera</option>
         <option value="Verano">Verano</option>
         <option value="Otoño">Otoño</option>
         <option value="Invierno">Invierno</option>
       </select>
-      <label>Temporada</label>
+      <label>Seleccionar Temporada</label>
     </div>
   </div>
   <div class="col-sm-12 col-md-6 pb-5">

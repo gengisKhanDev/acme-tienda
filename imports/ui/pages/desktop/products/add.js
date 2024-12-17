@@ -1,6 +1,7 @@
 import "./add.html";
 
 import { Sede } from "../../../../api/sede/sede.js";
+import { Proveedor } from "../../../../api/proveedor/proveedor.js";
 import { ReactiveVar } from 'meteor/reactive-var';
 
 Template.desktop_products_add.onCreated(function(){
@@ -8,6 +9,7 @@ Template.desktop_products_add.onCreated(function(){
   Tracker.autorun(() => {
     checkUserRole(["Super Admin", "Admin", "Employee"]);
     this.subscribe("get.sede");
+    this.subscribe("get.proveedor");
   });
   this.selectedCategory = new ReactiveVar('');
 
@@ -16,12 +18,27 @@ Template.desktop_products_add.onCreated(function(){
 Template.desktop_products_add.onRendered(function(){
   initFormatName();
   initSelect2();
+  initFlatpickr({
+    selector: "#date",
+    placeholder: ""
+  });
+  initPlacesAutocomplete("address", function(result){
+    if(result){
+      Session.set("address", Session.get("placesAutocomplete"));
+    }
+  });
 });
 
 Template.desktop_products_add.helpers({
   isCategory(category) {
     const instance = Template.instance();
     return instance.selectedCategory.get() === category;
+  },
+  sede(){
+    return Sede.find({});
+  },
+  proveedor(){
+    return Proveedor.find({});
   }
 });
 
@@ -67,6 +84,8 @@ Template.desktop_products_add.events({
 
     // Recopila los datos comunes
     const categoria = instance.selectedCategory.get();
+    const sede = event.target.sede.value;
+    const proveedor = event.target.proveedor.value;
     const nombre = event.target.nombre.value.trim();
     const nserie = event.target.nserie.value.trim();
     const descripcion = event.target.descripcion.value.trim();
@@ -128,23 +147,30 @@ Template.desktop_products_add.events({
       precio,
       stock,
       categoria,
+      sede,
+      proveedor,
       fecha_creacion: new Date(),
       fecha_actualizacion: new Date(),
       detalles_categoria
     };
 
-    console.log(producto)
-
-    // Inserta el producto en la colección
-    // Productos.insert(producto, (error, result) => {
-    //   if (error) {
-    //     alert(`Error al agregar el producto: ${error.message}`);
-    //   } else {
-    //     alert("Producto agregado exitosamente.");
-    //     // Limpia el formulario y resetea la categoría seleccionada
-    //     event.target.reset();
-    //     instance.selectedCategory.set('');
-    //   }
-    // });
+    Meteor.call("add.product", producto,
+      function(error, result){
+       if(error){
+         console.log(error);
+         disableBtn("form", false, "Confirmar");
+         if(error.error === "food-exists"){
+           yoloAlert("error", error.reason);
+         }
+         else {
+           yoloAlert("error");
+         }
+       }
+       else {
+        //  document.getElementById("addProveedor").reset();
+         disableBtn("form", false, "Add");
+         yoloAlert("success", "Producto Agregado!");
+       }
+     });
   }
 });

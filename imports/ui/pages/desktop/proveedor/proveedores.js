@@ -1,6 +1,6 @@
-import "./sede.html";
+import "./proveedores.html";
 
-Template.desktop_sede.onCreated(function(){
+Template.desktop_proveedores.onCreated(function(){
   document.title = "ACME - Product Categories";
   this.isSubscriptionReady = new ReactiveVar(false);
   Tracker.autorun(() => {
@@ -8,13 +8,13 @@ Template.desktop_sede.onCreated(function(){
   });
 });
 
-Template.desktop_sede.helpers({
+Template.desktop_proveedores.helpers({
   isSubscriptionReady(){
     return Template.instance().isSubscriptionReady.get();
   },
-  productCategories(){
+  proveedores(){
     return {
-      collection: "sede",
+      collection: "proveedor",
       rowsPerPage: 25,
       showFilter: true,
       ready: Template.instance().isSubscriptionReady,
@@ -26,8 +26,11 @@ Template.desktop_sede.helpers({
           key: "nombre",
           label: "Nombre"
         },{
-          key: "capacidad",
-          label: "Capacidad"
+          key: "informacion_contacto.telefono",
+          label: "Telefono"
+        },{
+          key: "informacion_contacto.email",
+          label: "Email"
         },{
           key: "direccion.formatted_address",
           label: "Dirección"
@@ -52,7 +55,7 @@ Template.desktop_sede.helpers({
   }
 });
 
-Template.desktop_sede.events({
+Template.desktop_proveedores.events({
   "click .delete-product-category"(event){
     sourAlert({
       type: "question",

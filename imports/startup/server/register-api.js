@@ -10,9 +10,13 @@ import "../../api/users/server/publications.js";
 // import "../../api/game-categories/methods.js";
 // import "../../api/game-categories/server/publications.js";
 
-//Product Categories
+//Sede
 import "../../api/sede/methods.js";
 import "../../api/sede/server/publications.js";
+
+//Proveedor
+import "../../api/proveedor/methods.js";
+import "../../api/proveedor/server/publications.js";
 
 //Products
 import "../../api/products/methods.js";

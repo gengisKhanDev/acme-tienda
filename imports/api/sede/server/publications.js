@@ -3,15 +3,12 @@ import { Sede } from "../sede.js";
 import { check } from "meteor/check";
 
 if(Meteor.isServer){
-  ReactiveTable.publish("productCategories", Sede, {},{
+  ReactiveTable.publish("sede", Sede, {},{
       fields: {
         _id: 1,
-       codPostal: 1,
-       ciudad: 1,
+       nombre: 1,
+       capacidad: 1,
        direccion: 1,
-       telefono: 1,
-       createdAt: 1,
-       createdBy: 1
      }
    });
 

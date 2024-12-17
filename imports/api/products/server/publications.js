@@ -6,11 +6,14 @@ if(Meteor.isServer){
   ReactiveTable.publish("products", Products, {},{
       fields: {
         _id: 1,
+       nombre: 1,
+       nserie: 1,
+       descripcion: 1,
+       precio: 1,
+       stock: 1,
+       categoria: 1,
+       proveedor: 1,
        sede: 1,
-       tipo: 1,
-       marca: 1,
-       color: 1,
-       cantidad: 1,
        createdAt: 1,
        createdBy: 1
      }

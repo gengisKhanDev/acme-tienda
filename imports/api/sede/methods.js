@@ -7,16 +7,15 @@ const createdBy = require("../../startup/server/created-by.js");
 const colors = require("../../startup/server/colors.js");
 
 Meteor.methods({
-  "add.product-category"(codPostal, ciudad, direccion,telefono){
+  "add.sede"(sede){
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");
     }
     return Sede.insert({
-      codPostal: codPostal,
-      ciudad: ciudad,
-      direccion: direccion,
-      telefono: telefono,
-      // color: colors.getRandom(),
+      nombre: sede.nombre,
+      direccion: sede.direccion,
+      capacidad: sede.capacidad,
+      horario_atencion: sede.horario_atencion,
       createdBy: createdBy.getUser(Meteor.userId()),
       createdAt: new Date()
     });

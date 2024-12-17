@@ -42,25 +42,31 @@ Template.desktop_products.helpers({
         label: "id",
         hidden: true
       },{
-        key: "sede.ciudad",
+        key: "nombre",
+        label: "Nombre"
+      },{
+        key: "nserie",
+        label: "Número de serie"
+      },{
+        key: "descripcion",
+        label: "Descripcion"
+      },{
+        key: "precio",
+        label: "Precio"
+      },{
+      },{
+        key: "stock",
+        label: "Stok"
+      },{
+        key: "proveedor.nombre",
+        label: "Proveedor"
+      },{
+        key: "sede.nombre",
         label: "Sede"
       },{
-        key: "tipo",
-        label: "Tipo"
       },{
-        key: "marca",
-        label: "Marca"
-      },{
-        key: "color",
-        label: "Color"
-      },{
-      },{
-        key: "cantidad",
-        label: "Cantidad"
-      },{
-      },{
-        key: "0",
-        label: "En Reserva"
+        key: "categoria",
+        label: "Categoria"
       },{
         key: "_id",
         label: "",

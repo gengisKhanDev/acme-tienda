@@ -1,5 +1,6 @@
 import { Products } from "./products.js";
 import { Sede } from "../sede/sede.js"
+import { Proveedor } from "../proveedor/proveedor.js"
 
 import { check } from "meteor/check";
 import { Random } from "meteor/random";
@@ -8,24 +9,31 @@ const createdBy = require("../../startup/server/created-by.js");
 const toCents = require("../../startup/server/to-cents.js");
 
 Meteor.methods({
-  "add.product"(tipo, marca, color, descripcion){
+  "add.product"(producto){
     if(!Meteor.userId()){
       throw new Meteor.Error("not-authorized");
     }
-    // const productCategory = Sede.findOne({_id: ciudad});
-    // const productCategoryObj = {
-    //   id: productCategory._id,
-    //   ciudad: productCategory.ciudad
-    // };
+    const sede = Sede.findOne({_id: producto.sede});
+    const proveedor = Proveedor.findOne({_id: producto.proveedor});
+    const proveedorObj = {
+      id: sede._id,
+      nombre: sede.nombre
+    };
+    const sedeObj = {
+      id: proveedor._id,
+      nombre: proveedor.nombre
+    };
 
     return Products.insert({
-      tipo: tipo,
-      marca: marca,
-      color: color,
-      descripcion: descripcion,
-      //sede: productCategoryObj,
-      createdBy: createdBy.getUser(Meteor.userId()),
-      showOnMenu: true,
+      nombre: producto.nombre,
+      nserie: producto.nserie,
+      descripcion: producto.descripcion,
+      precio: producto.precio,
+      stock: producto.stock,
+      categoria: producto.categoria,
+      sede: sedeObj,
+      proveedor: proveedorObj,
+      detalles_categoria: producto.detalles_categoria,
       createdAt: new Date()
     });
   },
